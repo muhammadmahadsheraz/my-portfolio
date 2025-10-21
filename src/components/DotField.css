@@ -1,0 +1,54 @@
+/* src/components/DotField.css */
+.dot-field { 
+    position: absolute; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    pointer-events: none; 
+    z-index: 0; 
+    overflow: hidden; 
+    border-radius: 18px; 
+    will-change: transform;
+    transform: translateZ(0); /* Force GPU acceleration */
+  }
+  
+  .matrix-column {
+    color: rgba(0, 255, 0, 0.15);
+    text-shadow:
+      0 0 2px rgba(0, 255, 70, 0.2),
+      0 0 6px rgba(0, 255, 70, 0.4),
+      0 0 12px rgba(0, 255, 100, 0.5);
+    transition: none; /* Remove transitions for better performance */
+    will-change: transform, color, text-shadow;
+    transform: translateZ(0); /* Force GPU acceleration */
+  }
+  
+  .matrix-column.glow {
+    color: rgba(170, 255, 170, 1);
+    text-shadow:
+      0 0 8px rgba(120, 255, 120, 1),
+      0 0 14px rgba(80, 255, 80, 0.8),
+      0 0 24px rgba(60, 255, 60, 0.6);
+  }
+  
+  /* Optimize span elements for better performance */
+  .matrix-column span {
+    will-change: transform, color, text-shadow;
+    transform: translateZ(0);
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .dot-field {
+      display: none;
+    }
+  }
+  
+  /* Performance optimizations for mobile */
+  @media (max-width: 768px) {
+    .matrix-column {
+      font-size: 10px !important;
+    }
+  }
+  

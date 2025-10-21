@@ -1,0 +1,23 @@
+/* src/components/Skills.css */
+.skills-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 12px; 
+    width: 90vw; 
+  }
+  
+  .skill { 
+    padding: 12px; 
+    border-radius: 10px; 
+    background: rgba(20,20,20,0.2); 
+    text-align: center; 
+    font-weight: 600; 
+    color: var(--muted); 
+  }
+  
+  .skill .k { 
+    font-family: 'Oswald', sans-serif; 
+    color: var(--text); 
+    margin-bottom: 6px; 
+    display: block; 
+  }

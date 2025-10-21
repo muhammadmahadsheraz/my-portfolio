@@ -1,0 +1,22 @@
+/* src/components/Journey.css */
+.timeline { 
+    display: flex; 
+    gap: 12px; 
+    flex-direction: column; 
+    width: 100%; 
+  }
+  
+  .timeline-item { 
+    display: flex; 
+    gap: 14px; 
+    align-items: flex-start; 
+    padding: 12px; 
+    background: rgba(255,255,255,0.01); 
+    border-radius: 10px; 
+  }
+  
+  .timeline-item strong { 
+    display: block; 
+    color: var(--text); 
+    font-family: 'Oswald', sans-serif; 
+  }
