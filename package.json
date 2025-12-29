@@ -5,7 +5,13 @@
   "type": "module",
   "description": "Portfolio website for Mahad Sheraz - Full Stack Developer",
   "author": "Mahad Sheraz",
-  "keywords": ["portfolio", "react", "vite", "developer", "full-stack"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "developer",
+    "full-stack"
+  ],
   "homepage": "https://mahadsheraz.dev",
   "scripts": {
     "dev": "vite",
@@ -16,6 +22,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem calculations */
 }
 
 body {
@@ -21,6 +22,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 :root {
@@ -34,6 +36,9 @@ body {
   --glass-blur: 20px;
   --radius: 14px;
   --maxw: 100%;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-fast: all 0.2s ease-out;
 }
 
 /* Focus styles for accessibility */
@@ -85,28 +90,39 @@ body {
 main {
   width: 100%;
   margin: 0 auto;
-  padding: 60px 80px;
+  padding: clamp(2rem, 8vw, 5rem) clamp(1rem, 6vw, 5rem);
   box-sizing: border-box;
 }
 
 section {
   width: 100%;
   min-height: auto;
-  padding: 60px 0;
+  padding: clamp(2rem, 6vw, 4rem) 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--transition-smooth);
 }
 
 .section-panel {
   background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-  padding: 20px;
+  padding: clamp(1rem, 4vw, 1.5rem);
   border-radius: var(--radius);
   backdrop-filter: blur(var(--glass-blur)) saturate(220%);
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(220%);
   border: 1px solid rgba(255,255,255,0.03);
   box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition: var(--transition-smooth);
+  transform: translateY(0);
+}
+
+.section-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  border-color: rgba(47,110,24,0.2);
 }
 
 h2.sec-title { 

@@ -4,28 +4,37 @@ import './Projects.css'
 
 const projectsData = [
   {
-    badge: 'Python • NoSQL',
-    title: 'KiteDB',
-    desc: 'Educational NoSQL JSON DBMS with atomic transactions, role access, AES-CBC encryption and in-memory indices. Console + server interfaces.',
+    badge: 'MERN • E-Commerce',
+    title: 'Palang',
+    desc: 'Full-stack furniture eCommerce website built with MongoDB, Express, React, and Node.js — featuring product management, cart, authentication, and order tracking.',
+    actions: [
+      { label: 'Live Visit', href: '#' },
+      { label: 'View Code', href: '#' }
+    ]
+  },
+{
+  badge: 'C# • WinForms',
+  title: 'Solitaire',
+  desc: 'A pixel-styled Solitaire game built in C# WinForms with custom animations, card logic, and a polished retro UI.',
+  actions: [{ label: 'View Code', href: 'https://github.com/muhammadmahadsheraz/Solitaire-WinForms' }]
+},
+  {
+    badge: 'C# • .NET Framework',
+    title: 'Witch Hunt',
+    desc: '2D adventure game built with C# and .NET Framework — includes AI-driven enemies, dynamic level progression, and inventory mechanics.',
     actions: [{ label: 'View Code', href: '#' }]
   },
   {
-    badge: 'Python • Flask',
-    title: 'Indian Rummy',
-    desc: 'Multiplayer card game with graph-based AI, custom data structures and a Flask server for multiplayer interactions.',
-    actions: [{ label: 'View Code', href: '#' }]
+    badge: 'C++ • React',
+    title: 'Custom DBMS',
+    desc: 'High-performance DBMS with B+ Tree indexing, custom storage engine, and a SQL-like parser. C++ backend with a React frontend.',
+    actions: [{ label: 'View Code', href: 'https://github.com/AmirHashmi017/DBMS-From-Scratch' }]
   },
   {
-    badge: 'HTML • CSS • JS',
-    title: 'Xcell Digital Services',
-    desc: 'Agency portfolio site with loading screen, interactive nav, smooth scrolling and contact form — fully responsive.',
-    actions: [{ label: 'Live Visit', href: '#' }, { label: 'View Code', href: '#' }]
-  },
-  {
-    badge: 'JS • Python',
-    title: 'Xzamine',
-    desc: 'Chrome extension that analyzes tweets using local & cloud AI models to check legality and produce reports.',
-    actions: [{ label: 'View Code', href: '#' }]
+    badge: 'Python • AI/NLP',
+    title: 'AI Phishing Email Parser',
+    desc: 'Email ingestion and parsing pipeline with ML classification to detect phishing attempts. Python backend service exposing a simple API.',
+    actions: [{ label: 'View Code', href: 'https://github.com/muhammadmahadsheraz/Phishing-Email-Parser' }]
   }
 ]
 

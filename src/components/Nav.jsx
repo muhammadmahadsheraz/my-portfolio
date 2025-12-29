@@ -1,11 +1,13 @@
 // src/components/Navbar.jsx
-import React from 'react'
+import React, { useState } from 'react'
 import './Nav.css'
 
 const Navbar = ({ activeSection, onNavClick }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   const navItems = [
     { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' }, // Note: no about section, but in HTML
+    { href: '#about', label: 'About' },
     { href: '#services', label: 'Services' },
     { href: '#projects', label: 'Projects' },
     { href: '#journey', label: 'Journey' },
@@ -13,13 +15,31 @@ const Navbar = ({ activeSection, onNavClick }) => {
     { href: '#contact', label: 'Contact' }
   ]
 
+  const handleNavClick = (section) => {
+    onNavClick(section)
+    setIsMenuOpen(false) // Close menu after clicking
+  }
+
   return (
     <nav className="top-nav">
       <div className="brand">
         <div className="logo">MS</div>
         <div className="name">Mahad Sheraz</div>
       </div>
-      <div className="nav-links">
+      
+      {/* Hamburger Menu Button */}
+      <button 
+        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* Navigation Links */}
+      <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         {navItems.map(({ href, label }) => (
           <a
             key={href}
@@ -27,14 +47,23 @@ const Navbar = ({ activeSection, onNavClick }) => {
             className={`nav-link ${activeSection === href.slice(1) ? 'active' : ''}`}
             onClick={(e) => {
               e.preventDefault()
-              onNavClick(href.slice(1))
+              handleNavClick(href.slice(1))
             }}
           >
             {label}
           </a>
         ))}
+        <a 
+          className="cta" 
+          href="#contact" 
+          onClick={(e) => { 
+            e.preventDefault(); 
+            handleNavClick('contact'); 
+          }}
+        >
+          Hire me
+        </a>
       </div>
-      <a className="cta" href="#contact" onClick={(e) => { e.preventDefault(); onNavClick('contact'); }}>Hire me</a>
     </nav>
   )
 }

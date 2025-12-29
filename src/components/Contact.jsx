@@ -1,10 +1,12 @@
 // src/components/Contact.jsx
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser';
 import './Contact.css'
 
 const Contact = () => {
+
   const [formData, setFormData] = useState({
-    fullname: '',
+    name: '',
     email: '',
     mobile: '',
     subject: '',
@@ -16,8 +18,8 @@ const Contact = () => {
   const validateForm = () => {
     const newErrors = {}
     
-    if (!formData.fullname.trim()) {
-      newErrors.fullname = 'Name is required'
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required'
     }
     
     if (!formData.email.trim()) {
@@ -46,18 +48,32 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
     if (!validateForm()) {
       return
     }
-    
     setIsSubmitting(true)
-    
     try {
-      const { fullname, email, message, subject = 'Project Inquiry' } = formData
-      const body = `Name: ${fullname}%0D%0AEmail: ${email}%0D%0AMobile: ${formData.mobile}%0D%0A%0D%0A${message}`
-      const mailto = `mailto:abdul.rehman@example.com?subject=${encodeURIComponent(subject)}&body=${body}`
-      window.location.href = mailto
+      const dataToSend={...formData,subject:'Project Enquiry'};
+      await emailjs.send(
+        'service_mo15u5f',
+        'template_36byv3b',
+        dataToSend,
+        'EzwlyMzIQo0TlzFn9'
+      )
+      await emailjs.send(
+        'service_mo15u5f',
+        'template_duk5xhq',
+        dataToSend,
+        'EzwlyMzIQo0TlzFn9'
+      )
+        alert('Message sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        mobile: '',
+        subject: '',
+        message: ''
+      })
     } catch (error) {
       console.error('Error sending email:', error)
     } finally {
@@ -72,18 +88,18 @@ const Contact = () => {
       <div className="contact-grid">
         <form className="card" onSubmit={handleSubmit} noValidate>
           <div className="form-group">
-            <label htmlFor="fullname">Full Name *</label>
+            <label htmlFor="name">Full Name *</label>
             <input
-              id="fullname"
-              name="fullname"
+              id="name"
+              name="name"
               required
               placeholder="Your full name"
-              value={formData.fullname}
+              value={formData.name}
               onChange={handleChange}
-              aria-describedby={errors.fullname ? 'fullname-error' : undefined}
-              className={errors.fullname ? 'error' : ''}
+              aria-describedby={errors.name ? 'name-error' : undefined}
+              className={errors.name ? 'error' : ''}
             />
-            {errors.fullname && <span id="fullname-error" className="error-message">{errors.fullname}</span>}
+            {errors.name && <span id="name-error" className="error-message">{errors.name}</span>}
           </div>
 
           <div className="form-group">
@@ -150,7 +166,7 @@ const Contact = () => {
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
             <div className="muted" style={{ fontSize: '13px' }} id="submit-help">
-              or email: <span style={{ color: 'var(--accent)' }}>abdul.rehman@example.com</span>
+              or email: <span style={{ color: 'var(--accent)' }}>mahadtoosey@gmail.com</span>
             </div>
           </div>
         </form>
@@ -159,11 +175,11 @@ const Contact = () => {
           <h3 style={{ marginTop: 0 }}>Contact Info</h3>
           <div style={{ marginTop: '10px' }}>
             <div style={{ fontWeight: '700' }}>Email</div>
-            <div className="muted">abdul.rehman@example.com</div>
+            <div className="muted">mahadtoosey@gmail.com</div>
           </div>
           <div style={{ marginTop: '12px' }}>
             <div style={{ fontWeight: '700' }}>Location</div>
-            <div className="muted">Karachi, Pakistan</div>
+            <div className="muted">Lahore, Pakistan</div>
           </div>
           <div style={{ marginTop: '12px' }}>
             <div style={{ fontWeight: '700' }}>Availability</div>

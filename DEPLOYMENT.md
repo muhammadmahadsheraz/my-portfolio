@@ -1,6 +1,10 @@
 # Deployment Guide
 
-This guide covers various deployment options for the Mahad Sheraz Portfolio website.
+This guide covers various deployment options for the Mahad Sheraz Portfolio website. Project links referenced on this site include a general GitHub profile and specific repositories:
+
+- General GitHub: https://github.com/muhammadmahadsheraz
+- Custom DBMS (C++ backend, React frontend): https://github.com/AmirHashmi017/DBMS-From-Scratch
+- AI Phishing Email Parser (Python backend): private/local or TBD
 
 ## 🚀 Quick Deploy Options
 
@@ -166,5 +170,11 @@ Referrer-Policy: strict-origin-when-cross-origin
 ## 📞 Support
 
 For deployment issues, contact:
-- Email: abdul.rehman@example.com
-- GitHub: @mahadsheraz
+- Email: mahadtoosey@gmail.com
+- GitHub: @muhammadmahadsheraz
+
+
+
+
+
+

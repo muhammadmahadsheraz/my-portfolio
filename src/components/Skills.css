@@ -21,3 +21,43 @@
     margin-bottom: 6px; 
     display: block; 
   }
+  
+  @media (max-width: 1024px) {
+    .skills-grid {
+      width: 95vw;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skills-grid {
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    
+    .skill {
+      padding: 10px;
+      font-size: 13px;
+    }
+    
+    .skill .k {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    
+    .skill {
+      padding: 8px;
+      font-size: 12px;
+    }
+    
+    .skill .k {
+      font-size: 13px;
+    }
+  }

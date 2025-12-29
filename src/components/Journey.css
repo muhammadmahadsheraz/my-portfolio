@@ -1,4 +1,11 @@
 /* src/components/Journey.css */
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
 .timeline { 
     display: flex; 
     gap: 12px; 
@@ -8,9 +15,11 @@
   
   .timeline-item { 
     display: flex; 
+    justify-content: center;  /* Centers horizontally */
+
     gap: 14px; 
-    align-items: flex-start; 
-    padding: 12px; 
+    align-items: center; 
+    padding: 10px;
     background: rgba(255,255,255,0.01); 
     border-radius: 10px; 
   }
@@ -19,4 +28,49 @@
     display: block; 
     color: var(--text); 
     font-family: 'Oswald', sans-serif; 
+  }
+  
+  @media (max-width: 1024px) {
+    .journey-grid {
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .journey-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    
+    .timeline-item {
+      padding: 10px;
+      gap: 10px;
+    }
+    
+    .timeline-item strong {
+      font-size: 14px;
+    }
+    
+    .timeline-item .muted {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .journey-grid {
+      gap: 6px;
+    }
+    
+    .timeline-item {
+      padding: 8px;
+      gap: 8px;
+    }
+    
+    .timeline-item strong {
+      font-size: 13px;
+    }
+    
+    .timeline-item .muted {
+      font-size: 12px;
+    }
   }

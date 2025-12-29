@@ -15,13 +15,11 @@
   
   .matrix-column {
     color: rgba(0, 255, 0, 0.15);
-    text-shadow:
-      0 0 2px rgba(0, 255, 70, 0.2),
-      0 0 6px rgba(0, 255, 70, 0.4),
-      0 0 12px rgba(0, 255, 100, 0.5);
-    transition: none; /* Remove transitions for better performance */
-    will-change: transform, color, text-shadow;
-    transform: translateZ(0); /* Force GPU acceleration */
+    text-shadow: 0 0 2px rgba(0, 255, 70, 0.2); /* Simplified shadow */
+    transition: none;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden; /* Optimize rendering */
   }
   
   .matrix-column.glow {
@@ -49,6 +47,30 @@
   @media (max-width: 768px) {
     .matrix-column {
       font-size: 10px !important;
+      text-shadow: none !important; /* Remove all shadows on mobile */
+    }
+    
+    .matrix-column span {
+      will-change: transform;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+  }
+  
+  /* Tablet optimizations */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .matrix-column {
+      font-size: 9px !important;
+    }
+  }
+  
+  /* High DPI display optimizations */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .matrix-column {
+      /* Slightly reduce effects on high DPI displays for better performance */
+      text-shadow: 0 0 2px rgba(0, 255, 70, 0.2),
+                   0 0 4px rgba(0, 255, 70, 0.3),
+                   0 0 8px rgba(0, 255, 100, 0.4);
     }
   }
   

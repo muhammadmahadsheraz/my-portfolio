@@ -45,25 +45,24 @@ const Hero = () => {
               — Full Stack Developer
             </h2>
             <p className="lead muted">
-              I build reliable software solutions that solve real-world problems — from creating dynamic web and desktop applications to integrating APIs. I ensure excellent performance and consistent results.
-            </p>
+            I create dependable, high-performance software solutions that solve real-world problems — building everything from dynamic web and desktop applications to seamless API integrations.            </p>
             <div className="hero-actions">
-              <a className="info" href="/CV.pdf" download aria-label="Download CV">Download CV</a>
+              <a className="cta" href="/CV.pdf" download aria-label="Download CV">Download CV</a>
               <a className="cta" href="#contact">Contact me</a>
+              <a className="cta" href="https://github.com/muhammadmahadsheraz" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </div>
           <div style={{ minWidth: '240px', maxWidth: '320px' }}></div>
         </div>
         <div className="hero-img">
-          <img src="/man.png" alt="Mahad Sheraz - Full Stack Developer" loading="eager" />
+          <img src="/man_1.png" alt="Mahad Sheraz - Full Stack Developer" loading="eager" />
         </div>
       </div>
       <div style={{ marginTop: '22px', zIndex: 8, position: 'relative' }}>
         <div className="section-panel">
           <h2 className="sec-title">About Me</h2>
           <p className="muted">
-            With a curious mind and a passion for software development, I started my journey as a computer scientist in 2023 and quickly moved from basic coding to building full solutions — web apps, desktop apps, APIs and more. I enjoy building reliable, performance-oriented software and experimenting with new stacks.
-          </p>
+          I embarked on my computer science journey in 2023 with an insatiable curiosity for how software shapes the world. What started as basic coding quickly evolved into creating full-scale solutions — from web and desktop applications to APIs and beyond. I’m passionate about crafting efficient, dependable systems and staying at the forefront of emerging technologies.          </p>
         </div>
       </div>
     </header>

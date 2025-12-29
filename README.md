@@ -130,8 +130,8 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 **Mahad Sheraz**
-- Email: abdul.rehman@example.com
-- Location: Karachi, Pakistan
+- Email: mahadtoosey@gmail.com
+- Location: Lahore, Pakistan
 - Portfolio: https://mahadsheraz.dev
 
 ---

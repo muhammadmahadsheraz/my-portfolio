@@ -78,10 +78,10 @@ const App = () => {
         ))}
         <div className="section-panel" style={{ maxWidth: '80%', margin: '0 10% 0 10%' }}>
           <div style={{ fontWeight: '700' }}>Quick info</div>
-          <div className="muted" style={{ marginTop: '8px' }}>Karachi, Pakistan • Freelance Developer</div>
+          <div className="muted" style={{ marginTop: '8px' }}>Lahore, Pakistan • Freelance Developer</div>
           <div style={{ marginTop: '10px' }}>
             <div style={{ fontWeight: '700' }}>Email</div>
-            <div className="muted">abdul.rehman@example.com</div>
+            <div className="muted">mahadtoosey@gmail.com</div>
           </div>
         </div>
       </main>
