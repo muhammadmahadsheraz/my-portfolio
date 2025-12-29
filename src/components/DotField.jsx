@@ -1,5 +1,5 @@
 // src/components/DotField.jsx
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './DotField.css'
 
 const DotField = ({ burst }) => {
@@ -10,8 +10,9 @@ const DotField = ({ burst }) => {
   const smoothBurstRef = useRef(1)
   const targetBurstRef = useRef(1)
   const frameCountRef = useRef(0)
-  const resizeTriggerRef = useRef(0)
+  const [resizeTrigger, setResizeTrigger] = useState(0)
   const isLowPerformance = useRef(false) // Track performance
+  const currentWidthRef = useRef(window.innerWidth)
 
   const initializeDotField = () => {
     if (!dotFieldRef.current) return
@@ -170,6 +171,7 @@ const DotField = ({ burst }) => {
 
   useEffect(() => {
     initializeDotField()
+    currentWidthRef.current = window.innerWidth
     
     animationFrameRef.current = requestAnimationFrame(animate)
 
@@ -177,7 +179,7 @@ const DotField = ({ burst }) => {
       cancelAnimationFrame(animationFrameRef.current)
       if (dotFieldRef.current) dotFieldRef.current.innerHTML = ''
     }
-  }, [resizeTriggerRef.current])
+  }, [resizeTrigger])
 
   // when burst changes, only update target
   useEffect(() => {
@@ -188,11 +190,16 @@ const DotField = ({ burst }) => {
   useEffect(() => {
     let resizeTimeout
     const handleResize = () => {
-      clearTimeout(resizeTimeout)
-      resizeTimeout = setTimeout(() => {
-        // Trigger reinitialization by updating the resize trigger
-        resizeTriggerRef.current += 1
-      }, 200) // Debounce resize events
+      const newWidth = window.innerWidth
+      // Only reinitialize if width changed significantly (more than 50px difference)
+      if (Math.abs(newWidth - currentWidthRef.current) > 50) {
+        clearTimeout(resizeTimeout)
+        resizeTimeout = setTimeout(() => {
+          // Trigger reinitialization by updating the resize trigger state
+          setResizeTrigger(prev => prev + 1)
+          currentWidthRef.current = newWidth
+        }, 150) // Debounce resize events
+      }
     }
 
     window.addEventListener('resize', handleResize, { passive: true })
