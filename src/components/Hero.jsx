@@ -47,7 +47,7 @@ const Hero = () => {
             <p className="lead muted">
             I create dependable, high-performance software solutions that solve real-world problems — building everything from dynamic web and desktop applications to seamless API integrations.            </p>
             <div className="hero-actions">
-              <a className="cta" href="/CV.pdf" download aria-label="Download CV">Download CV</a>
+              <a className="cta" href="public/Muhammad_Mahad_Sheraz_CV.pdf" download aria-label="Download CV">Download CV</a>
               <a className="cta" href="#contact">Contact me</a>
               <a className="cta" href="https://github.com/muhammadmahadsheraz" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>

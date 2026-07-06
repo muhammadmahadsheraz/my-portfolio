@@ -32,9 +32,16 @@ const projectsData = [
   },
   {
     badge: 'Python • AI/NLP',
-    title: 'AI Phishing Email Parser',
+    title: 'Bycatch - AI Phishing Email Parser',
     desc: 'Email ingestion and parsing pipeline with ML classification to detect phishing attempts. Python backend service exposing a simple API.',
-    actions: [{ label: 'View Code', href: 'https://github.com/muhammadmahadsheraz/Phishing-Email-Parser' }]
+    actions: [{ label: 'View Code', href: 'https://github.com/muhammadmahadsheraz/Phishing-Email-Parser' },{label: 'View Live', href: 'https://bycatch.vercel.app'}]
+  }
+  ,
+  {
+    badge: 'MERN • Saas',
+    title: 'WeavoAI - AI booking Saas platform',
+    desc: 'An AI booking platform that simplifies scheduling by automating appointments, availability management, confirmations, and customer communication.',
+    actions: [{ label: 'View Site', href: 'https://weavoai.vercel.app' }]
   }
 ]
 
